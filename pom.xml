@@ -34,8 +34,8 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
-						<username>${{ secrets.USERNAME }}</username>
-						<password>${{ secrets.PASSKEY }}</password>
+						<username>ars_710</username>
+						<password>710@Anypoint</password>
 						<applicationName>weather_Alert</applicationName>
 						<environment>Sandbox</environment>
 						<workers>1</workers>
