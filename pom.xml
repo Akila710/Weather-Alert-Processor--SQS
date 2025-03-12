@@ -31,22 +31,27 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<cloudHub2Deployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-			                        <provider>MC</provider>
-			           	        <environment>Sandbox</environment>
-			            		<target>Cloudhub-US-East-2</target>
-			            		<username>ars_710</username>
-			            		<password>710@Anypoint</password>
-			            		<muleVersion>3.9.6</muleVersion>
-			            		<applicationName>${project.artifactId}</applicationName>
-			           		<releaseChannel>NONE</releaseChannel>
-			            		<replicas>1</replicas>
-			            		<vCores>0.1</vCores>
-					<deploymentSettings>
-                				<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
-            				</deploymentSettings>
-					</cloudHub2Deployment>
+					<cloudhub2Deployment>
+      						<uri>https://anypoint.mulesoft.com</uri>
+      						<provider>MC</provider>
+      						<environment>Sandbox</environment>
+     					        <target>Cloudhub-US-East-2</target>
+      						<muleVersion>3.9.6</muleVersion>
+      						<username>ars_710</username>
+      						<password>710@Anypoint</password>
+      						<applicationName>${project.artifactId}</applicationName>
+      						<replicas>1</replicas>
+      						<vCores>0.1</vCores>
+      						<deploymentSettings>
+        						<http>
+         							<inbound>
+           								<publicUrl>https://weather_alert.cloudhub.io</publicUrl>
+            								<forwardSslSession>true</forwardSslSession>
+            								<lastMileSecurity>true</lastMileSecurity>
+          							</inbound>
+       							 </http>
+      						</deploymentSettings>
+    					</cloudhub2Deployment>
 					<sharedLibraries>
 						<sharedLibrary>
 							<groupId>com.h2database</groupId>
