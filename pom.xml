@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.7.0</app.runtime>
-		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
 		<munit.version>3.2.1</munit.version>
 	</properties>
 
@@ -28,7 +28,7 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>4.4.0</version>
 				<extensions>true</extensions>
 				<configuration>
 					<cloudhub2Deployment>
@@ -40,8 +40,8 @@
       						<replicas>1</replicas>
       						<vCores>0.1</vCores>
 						<provider>
-							<username>ars_710</username>
-      							<password>710@Anypoint</password>
+							   <username>ars_710</username>
+      							   <password>710@Anypoint</password>
 						</provider>
     					</cloudhub2Deployment>
 					<sharedLibraries>
