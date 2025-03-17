@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.7.0</app.runtime>
-		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
 		<munit.version>3.2.1</munit.version>
 	</properties>
 
@@ -28,24 +28,24 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>4.4.0</version>
+				<version>4.2.0</version>
 				<extensions>true</extensions>
 				<configuration>
 					<cloudHub2Deployment>
-<type>cloudHub2</type>     
-<uri>https://anypoint.mulesoft.com</uri>
-<targetName>Sandbox</targetName>
-<targetType>Shared Space</targetType>						
-<applicationName>Book</applicationName>
-<workers>1</workers>
-<workerType>MICRO</workerType>
-<objectStoreV2>true</objectStoreV2>
-<region>us-east-1</region> 
-<provider>
-<username>ars_710</username>
-<password>710@Anypoint</password>
-</provider>         
-</cloudHub2Deployment>
+						<type>cloudHub2</type>     
+						<uri>https://anypoint.mulesoft.com</uri>
+						<targetName>Sandbox</targetName>
+						<targetType>Shared Space</targetType>						
+						<applicationName>Book</applicationName>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+						<objectStoreV2>true</objectStoreV2>
+						<region>us-east-2</region> 
+						<provider>
+							<username>ars_710</username>
+							<password>710@Anypoint</password>
+						</provider>         
+					</cloudHub2Deployment>
 					<sharedLibraries>
 						<sharedLibrary>
 							<groupId>com.h2database</groupId>
