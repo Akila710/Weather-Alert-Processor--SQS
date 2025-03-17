@@ -31,19 +31,20 @@
 				<version>4.4.0</version>
 				<extensions>true</extensions>
 				<configuration>
-					<cloudhub2Deployment>
-      						<uri>https://anypoint.mulesoft.com</uri>
-      						<environment>Sandbox</environment>
-     					        <target>Cloudhub-US-East-2</target>
-      						<muleVersion>3.9.6</muleVersion>
-      						<applicationName>${project.artifactId}</applicationName>
-      						<replicas>1</replicas>
-      						<vCores>0.1</vCores>
-						<provider>
-							   <username>ars_710</username>
-      							   <password>710@Anypoint</password>
-						</provider>
-    					</cloudhub2Deployment>
+					<cloudHub2Deployment>
+<type>cloudHub2</type>     
+<uri>https://anypoint.mulesoft.com</uri>
+<target>Sandbox</target>
+<applicationName>Book-cicd-05032025</applicationName>
+<workers>1</workers>
+<workerType>MICRO</workerType>
+<objectStoreV2>true</objectStoreV2>
+<region>us-east-1</region> 
+<provider>
+<username>ars_710</username>
+<password>710@Anypoint</password>
+</provider>         
+</cloudHub2Deployment>
 					<sharedLibraries>
 						<sharedLibrary>
 							<groupId>com.h2database</groupId>
