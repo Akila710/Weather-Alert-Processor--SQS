@@ -37,11 +37,14 @@
       						<environment>Sandbox</environment>
      					        <target>Cloudhub-US-East-2</target>
       						<muleVersion>3.9.6</muleVersion>
-      						<username>ars_710</username>
-      						<password>710@Anypoint</password>
+						<workers>1</workers>
       						<applicationName>${project.artifactId}</applicationName>
       						<replicas>1</replicas>
       						<vCores>0.1</vCores>
+						<provider>
+							<username>ars_710</username>
+      							<password>710@Anypoint</password>
+						</provider>
     					</cloudhub2Deployment>
 					<sharedLibraries>
 						<sharedLibrary>
