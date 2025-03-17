@@ -37,8 +37,6 @@
       						<environment>Sandbox</environment>
      					        <target>Cloudhub-US-East-2</target>
       						<muleVersion>3.9.6</muleVersion>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
       						<applicationName>${project.artifactId}</applicationName>
       						<replicas>1</replicas>
       						<vCores>0.1</vCores>
