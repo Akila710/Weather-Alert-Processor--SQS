@@ -34,8 +34,9 @@
 					<cloudHub2Deployment>
 <type>cloudHub2</type>     
 <uri>https://anypoint.mulesoft.com</uri>
-<target>Sandbox</target>
-<applicationName>Book-cicd-05032025</applicationName>
+<targetName>Sandbox</targetName>
+<targetType>Shared Space</targetType>						
+<applicationName>Book</applicationName>
 <workers>1</workers>
 <workerType>MICRO</workerType>
 <objectStoreV2>true</objectStoreV2>
