@@ -32,7 +32,6 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudhub2Deployment>
-						<type>cloudHub2</type>
       						<uri>https://anypoint.mulesoft.com</uri>
       						<environment>Sandbox</environment>
      					        <target>Cloudhub-US-East-2</target>
