@@ -55,7 +55,7 @@ output application/json
 				</ee:message>
 			</ee:transform>
 			<sqs:send-message doc:name="Send message" doc:id="4abaf422-3c73-40f7-bf3c-5d8e6515cb9a" config-ref="Amazon_SQS_Configuration" queueUrl="https://sqs.eu-north-1.amazonaws.com/843981437160/temperatureAlerts"/>
-			<logger level="INFO" doc:name="Logger" doc:id="cd3006eb-8bcd-47e1-8105-a340b106d05e" message="#[typeOf(payload)]" category="com.demo.pub_sub_demo.pub_flow_temperature.#2"/>
+			<logger level="INFO" doc:name="Logger" doc:id="cd3006eb-8bcd-47e1-8105-a340b106d05e" message="#[payload]" category="com.demo.pub_sub_demo.pub_flow_temperature.#2"/>
 		</foreach>
 		<error-handler ref="commonsError_Handler" />
 	</flow>

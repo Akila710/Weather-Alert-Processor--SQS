@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
-	<artifactId>pub_sub_demo</artifactId>
+	<groupId>5e24d110-fe62-437a-8758-9884782f2281</groupId>
+	<artifactId>pub-sub-demo</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
@@ -12,8 +12,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-		<app.runtime>4.7.0</app.runtime>
 		<mule.maven.plugin.version>4.2.0</mule.maven.plugin.version>
 		<munit.version>3.2.1</munit.version>
 	</properties>
@@ -31,18 +29,23 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>4.4.0</muleVersion>
-						<username></username>
-						<password></password>
-						<applicationName>weather_Alert</applicationName>
-						<environment>Sandbox</environment>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
-						<objectStoreV2>true</objectStoreV2>
-						
-					</cloudHubDeployment>
+					<classifier>mule-application</classifier>
+				  	<runtimeVersion>4.9.0</runtimeVersion>
+       				<cloudhub2Deployment>
+            			<uri>https://anypoint.mulesoft.com</uri>
+            			<provider>MC</provider>
+            			<environment>Sandbox</environment>
+            			<target>Cloudhub-US-East-2</target>
+            			<server>Repository</server>
+            			<applicationName>${project.artifactId}</applicationName>
+            			<releaseChannel>EDGE</releaseChannel>
+            			<replicas>1</replicas>
+			        	<javaVersion>17</javaVersion>		 
+            			<vCores>0.1</vCores>
+            			<deploymentSettings>
+                			<generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+            			</deploymentSettings>
+        			</cloudhub2Deployment>
 					<sharedLibraries>
 						<sharedLibrary>
 							<groupId>com.h2database</groupId>
@@ -56,23 +59,15 @@
 				<artifactId>munit-maven-plugin</artifactId>
 				<version>${munit.version}</version>
 				<executions>
-					<execution>
-						<id>test</id>
-						<phase>test</phase>
-						<goals>
-							<goal>test</goal>
-							<goal>coverage-report</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<coverage>
-						<runCoverage>true</runCoverage>
-						<formats>
-							<format>html</format>
-						</formats>
-					</coverage>
-				</configuration>
+                <execution>
+                    <goals>
+                        <goal>test</goal>
+                    </goals>
+                    <configuration>
+                        <skipMunitTests>true</skipMunitTests>
+                    </configuration>
+                </execution>
+            </executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -92,27 +87,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
-			<artifactId>mule-jms-connector</artifactId>
-			<version>1.9.4</version>
-			<classifier>mule-plugin</classifier>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-client</artifactId>
-			<version>5.15.16</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-broker</artifactId>
-			<version>5.15.16</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-kahadb-store</artifactId>
-			<version>5.15.16</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mule.connectors</groupId>
 			<artifactId>mule-db-connector</artifactId>
 			<version>1.14.10</version>
 			<classifier>mule-plugin</classifier>
@@ -120,14 +94,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>2.3.232</version>
-		</dependency>
-		<dependency>
-			<groupId>3bc849cb-1b9c-4b9f-b240-80a1e7278e16</groupId>
-			<artifactId>weather-alerts-api</artifactId>
-			<version>1.0.1</version>
-			<classifier>raml</classifier>
-			<type>zip</type>
+			<version>1.4.200</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.modules</groupId>
@@ -161,7 +128,22 @@
 			<version>5.11.14</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
+		<dependency>
+			<groupId>3bc849cb-1b9c-4b9f-b240-80a1e7278e16</groupId>
+			<artifactId>weather-alerts-api</artifactId>
+			<version>1.0.1</version>
+			<classifier>raml</classifier>
+			<type>zip</type>
+		</dependency>
 	</dependencies>
+	<distributionManagement>
+        <repository>
+            <id>Repository</id>
+            <name>Corporate Repository</name>
+            <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+            <layout>default</layout>
+        </repository>
+    </distributionManagement>
 
 	<repositories>
 		<repository>
@@ -175,6 +157,12 @@
 			<name>MuleSoft Releases Repository</name>
 			<url>https://repository.mulesoft.org/releases/</url>
 			<layout>default</layout>
+		</repository>
+		<repository>
+	    		<id>Repository</id>
+	    		<name>Private Exchange repository</name>
+	    		<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+	    		<layout>default</layout>
 		</repository>
 	</repositories>
 

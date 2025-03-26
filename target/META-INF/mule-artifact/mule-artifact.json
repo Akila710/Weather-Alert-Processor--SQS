@@ -8,7 +8,7 @@
   "secureProperties": [],
   "supportedJavaVersions": [],
   "redeploymentEnabled": true,
-  "name": "com.mycompany:pub_sub_demo:1.0.0-SNAPSHOT",
+  "name": "5e24d110-fe62-437a-8758-9884782f2281:pub-sub-demo:1.0.0-SNAPSHOT",
   "minMuleVersion": "4.7.0",
   "requiredProduct": "MULE_EE",
   "classLoaderModelLoaderDescriptor": {
