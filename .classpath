@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="con" path="org.mule.tooling.API_SPEC_LIB/5e24d110-fe62-437a-8758-9884782f2281/weather-alerts-api/1.0.1"/>
 	<classpathentry kind="con" path="org.mule.tooling.MULE_PROJECT_LIB"/>
-	<classpathentry kind="con" path="org.mule.tooling.API_SPEC_LIB/3bc849cb-1b9c-4b9f-b240-80a1e7278e16/weather-alerts-api/1.0.1"/>
 	<classpathentry kind="con" path="MULE_LIB/com.mulesoft.connectors/mule-amazon-sqs-connector/5.11.14"/>
 	<classpathentry kind="con" path="MULE_LIB/com.mulesoft.munit/munit-tools/3.2.1"/>
 	<classpathentry kind="con" path="MULE_LIB/com.mulesoft.munit/munit-runner/3.2.1"/>

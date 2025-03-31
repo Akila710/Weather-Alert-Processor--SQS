@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>5e24d110-fe62-437a-8758-9884782f2281</groupId>
+  <artifactId>weather-alerts-api</artifactId>
+  <version>1.0.1</version>
+  <name>Weather-alerts-API</name>
+  <properties>
+    <classifier>raml</classifier>
+    <main>weather-alerts-api.raml</main>
+    <status>published</status>
+    <originalFormatVersion>1.0</originalFormatVersion>
+    <apiVersion>v1</apiVersion>
+    <projectId>c730a763-58b5-46c5-abf0-f361e92471a8</projectId>
+    <branchId>master</branchId>
+    <commitId>f92219e98d7d2028326ca0b670ec16c9fab9497e</commitId>
+    <keywords/>
+    <type>rest-api</type>
+    <mainFile>weather-alerts-api.raml</mainFile>
+  </properties>
+  <repositories>
+    <repository>
+      <id>anypoint-exchange</id>
+      <url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+    </repository>
+  </repositories>
+</project>

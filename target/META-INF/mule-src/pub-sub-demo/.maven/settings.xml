@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <settings>
+
   <pluginGroups>
     <pluginGroup>org.mule.tools</pluginGroup>
   </pluginGroups>
@@ -13,11 +14,4 @@
   </servers>
 
 </settings>
-    <servers>
-        <server>
-            <id>ca.anypoint.credentials</id>
-            <username>ars_710</username>
-            <password>710@Anypoint</password>
-        </server>
-    </servers>
-</settings>
+    
