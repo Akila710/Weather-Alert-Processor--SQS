@@ -21,7 +21,7 @@ http://www.mulesoft.org/schema/mule/sqs http://www.mulesoft.org/schema/mule/sqs/
 	</http:listener-config>
 	<configuration doc:name="Configuration" doc:id="a7abcb11-fd1c-4814-b40a-f8b2852a4132" defaultErrorHandler-ref="commonsError_Handler" />
 	<sqs:config name="Amazon_SQS_Configuration" doc:name="Amazon SQS Configuration" doc:id="231db1f4-9403-469e-875d-3a35e90dc270">
-		<sqs:basic-connection testQueueArn="arn:aws:sqs:eu-north-1:843981437160:temperatureAlerts" accessKey="${aws_sqs_accessKey}" secretKey="${aws_sqs_secretKey}" region="${aws_sqs_region}" />
+		<sqs:basic-connection testQueueArn="arn:aws:sqs:eu-north-1:843981437160:temperatureAlerts" accessKey="${secrets.AWS_SQS_ACCESSKEY}" secretKey="${secrets.AWS_SQS_SECRETKEY}" region="eu-north-1" />
 	</sqs:config>
 	<configuration-properties doc:name="Configuration properties" doc:id="aa22afab-7195-4f44-ad4b-825e370dfde7" file="config.yaml" />
 	<error-handler name="commonsError_Handler" doc:id="4574eb60-0726-4813-bf0d-fa1c7699d2b7" >
